@@ -17,15 +17,19 @@
   Entre no diretório API-Trabalho-de-Sistemas-Distribuidos/ com o seguinte comando   
   
       `cd API-Trabalho-de-Sistemas-Distribuidos/`    
-  Agora crie uma virtual environment para instalar as dependencias   
+  Agora crie uma virtual environment para instalar as dependencias  
+  
       `python3 -m venv env`
     
   Agora ative sua virtual environment
+  
       `source env/bin/activate`
   
   Após ativar você instala as depedencias que estão no arquivo requirements.txt com o seguinte comando:
+  
       `pip install -r requirements.txt`
   
   E por ultimo abra seu projeto no Visual Studio Code
+  
       `code .`
    
