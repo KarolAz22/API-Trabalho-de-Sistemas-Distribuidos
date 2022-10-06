@@ -10,26 +10,26 @@
 ## Clonando o repositório
   Para clonar o repositório utilize o seguinte comando   
   
-      `git clone https://github.com/KarolAz22/API-Trabalho-de-Sistemas-Distribuidos.git`
+      git clone https://github.com/KarolAz22/API-Trabalho-de-Sistemas-Distribuidos.git
   Após clonar o repositório entre no que foi criado utilizando o comando      
   
-      `cd API-Trabalho-de-Sistemas-Distribuidos/`
+      cd API-Trabalho-de-Sistemas-Distribuidos/
   Entre no diretório API-Trabalho-de-Sistemas-Distribuidos/ com o seguinte comando   
   
-      `cd API-Trabalho-de-Sistemas-Distribuidos/`    
+      cd API-Trabalho-de-Sistemas-Distribuidos/
   Agora crie uma virtual environment para instalar as dependencias  
   
-      `python3 -m venv env`
+      python3 -m venv env
     
   Agora ative sua virtual environment
   
-      `source env/bin/activate`
+      source env/bin/activate
   
   Após ativar você instala as depedencias que estão no arquivo requirements.txt com o seguinte comando:
   
-      `pip install -r requirements.txt`
+      pip install -r requirements.txt
   
   E por ultimo abra seu projeto no Visual Studio Code
   
-      `code .`
+      code .
    
