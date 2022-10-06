@@ -8,16 +8,16 @@
   4. Baixar e configurar o git em seu computador
   
 ## Clonando o repositório
-  Para clonar o repositório utilize o seguinte comando
+  Para clonar o repositório utilize o seguinte comando   
+  
       `git clone https://github.com/KarolAz22/API-Trabalho-de-Sistemas-Distribuidos.git`
-      
-  Após clonar o repositório entre no que foi criado utilizando o comando  
+  Após clonar o repositório entre no que foi criado utilizando o comando      
+  
       `cd API-Trabalho-de-Sistemas-Distribuidos/`
-      
-  Entre no diretório API-Trabalho-de-Sistemas-Distribuidos/ com o seguinte comando 
-      `cd API-Trabalho-de-Sistemas-Distribuidos/`
-      
-  Agora crie uma virtual environment para instalar as dependencias
+  Entre no diretório API-Trabalho-de-Sistemas-Distribuidos/ com o seguinte comando   
+  
+      `cd API-Trabalho-de-Sistemas-Distribuidos/`    
+  Agora crie uma virtual environment para instalar as dependencias   
       `python3 -m venv env`
     
   Agora ative sua virtual environment
