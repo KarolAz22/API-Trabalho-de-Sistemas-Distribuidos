@@ -15,6 +15,9 @@ class Author(models.Model):
     orcid = models.URLField()
     gitHub  = models.URLField()
 
+    def __str__(self) -> str:
+        return self.name
+
 class Co_advirsor(models.Model):
     id_co_advisor = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
@@ -29,6 +32,8 @@ class Co_advirsor(models.Model):
     orcid = models.URLField()
     gitHub  = models.URLField()
 
+    def __str__(self) -> str:
+        return self.name
 class Student(models.Model):
     id_student = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
@@ -42,6 +47,9 @@ class Student(models.Model):
     linkedin = models.URLField()
     orcid = models.URLField()
     gitHub  = models.URLField()
+
+    def __str__(self) -> str:
+        return self.name
 
 class Advirsor(models.Model):
     id_advisor = models.AutoField(primary_key=True)
@@ -57,6 +65,9 @@ class Advirsor(models.Model):
     orcid = models.URLField()
     gitHub  = models.URLField()
 
+    def __str__(self) -> str:
+        return self.name
+
 class Monograph(models.Model):
     id_monography = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
@@ -71,4 +82,7 @@ class Monograph(models.Model):
     fk_id_author = models.ForeignKey(Author, null=True, on_delete=models.SET_NULL)
     fk_co_advisor = models.ForeignKey(Co_advirsor, null=True, on_delete=models.SET_NULL)
     fk_advisor  = models.ForeignKey(Advirsor, null=True, on_delete=models.SET_NULL)
+
+    def __str__(self) -> str:
+        return self.title
 
