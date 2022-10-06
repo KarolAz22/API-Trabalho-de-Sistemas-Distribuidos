@@ -8,9 +8,9 @@
   4. Baixar e configurar o git em seu computador
   
 ##Clonando o repositório
-  Para clonar o repositório utilize o seguinte código:
-  `git clone https://github.com/KarolAz22/API-Trabalho-de-Sistemas-Distribuidos.git`
-  Após clonar o repositório entre no que foi criado utilizando o comando:
-  `cd API-Trabalho-de-Sistemas-Distribuidos/`
-  Após isso digite o seguinte comando para abrir o projeto no Visual Studio Code:
-  `code .`
+  Para clonar o repositório utilize o seguinte código:  
+  `git clone https://github.com/KarolAz22/API-Trabalho-de-Sistemas-Distribuidos.git`  
+  Após clonar o repositório entre no que foi criado utilizando o comando:  
+  `cd API-Trabalho-de-Sistemas-Distribuidos/`  
+  Após isso digite o seguinte comando para abrir o projeto no Visual Studio Code:  
+  `code .`  
