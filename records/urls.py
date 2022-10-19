@@ -8,5 +8,4 @@ urlpatterns = [
   path('co-authors' , views.registerOfCoAuthors, name='co-authors'),
   path('students' , views.registerOfStudents, name='students'),
   path('monographs' , views.registerOfmonographs, name='monographs'),
-
-]
+  ]

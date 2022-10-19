@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from records.models import Author, Monograph
+
 
 def registerOfAuthors():
     pass
@@ -12,4 +14,6 @@ def registerOfStudents():
 
 def registerOfmonographs():
     pass
+
+
 
