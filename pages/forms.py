@@ -9,20 +9,20 @@ class AuthorForms(ModelForm):
 
 class Co_advirsorForms(ModelForm):
     class Meta: 
-        model = Author
+        model = Co_advirsor
         fields = "__all__"
 
 class Advirsor(ModelForm):
     class Meta: 
-        model = Author
+        model = Advirsor
         fields = "__all__"
 
 class StudentForms(ModelForm):
     class Meta: 
-        model = Author
+        model = Student
         fields = "__all__"
 
 class MonographForms(ModelForm):
     class Meta: 
-        model = Author
+        model = Monograph
         fields = "__all__"
