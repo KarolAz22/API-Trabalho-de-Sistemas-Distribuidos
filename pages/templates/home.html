@@ -12,22 +12,32 @@
         <div class="container d-flex flex-nowrap">
             <select name="select" id="select">
                 <option value="title">Title</option>
-                <option value="course">Curso</option>
+                <option value="course">Course</option>
+                <option value="university">University</option>
+                <option value="abstract">Abstract</option>
+                <option value="keywords">Key Words</option>
                 <option value="author">Author</option>
-                <option value="coadivisor">Coadivisor</option>
+                <option value="advisor">Advisor</option>
+                <option value="coadvisor">Coadvisor</option>
             </select>
           <input type="text" class="form-control" name="search"  placeholder="Search" id="input-pesquisa">
           <button class="btn btn-dark" type="submit" id="botao-pesquisa"> <img src="" alt="icone-lupa" id="lupa">
           </button>
         </div>
     </form>
-      <p>{{monograph.title}}</p>
-      <p>{{monograph.course}}</p>
-      <p>{{monograph.university}}</p>
-      <p>{{monograph.key_words}}</p>
-      <p>{{monograph.abstract}}</p>
-      <p>{{monograph.fk_id_author}}</p>
-      <p>{{monograph.fk_advisor}}</p>
-      <p>{{monograph.fk_co_advisor}}</p>
+
+    {% for monograph in monographs %}
+        <a href="{% url 'details' pk=monograph.pk %}">Link </a>
+        <p>{{monograph.title}}</p>
+        <p>{{monograph.course}}</p>
+        <p>{{monograph.university}}</p>
+        <p>{{monograph.key_words}}</p>
+        <p>{{monograph.abstract}}</p>
+        <p>{{monograph.fk_id_author}}</p>
+        <p>{{monograph.fk_advisor}}</p>
+        <p>{{monograph.fk_co_advisor}}</p>
+    {% endfor %}
+
+    <p>{{message}}</p>
 </body>
 </html>

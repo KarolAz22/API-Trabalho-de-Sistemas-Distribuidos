@@ -79,9 +79,9 @@ class Monograph(models.Model):
     abstract = models.CharField(max_length=255)
     mography_link = models.URLField()
 
-    fk_id_author = models.ForeignKey(Author, null=True, on_delete=models.SET_NULL)
-    fk_co_advisor = models.ForeignKey(Co_advirsor, null=True, on_delete=models.SET_NULL)
-    fk_advisor  = models.ForeignKey(Advirsor, null=True, on_delete=models.SET_NULL)
+    fk_id_author = models.ForeignKey(Author, null=True, on_delete=models.SET_NULL, related_name='author')
+    fk_co_advisor = models.ForeignKey(Co_advirsor, null=True, on_delete=models.SET_NULL, related_name='co_orientador')
+    fk_advisor  = models.ForeignKey(Advirsor, null=True, on_delete=models.SET_NULL, related_name='orientador')
 
     def __str__(self) -> str:
         return self.title

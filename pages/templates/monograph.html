@@ -7,11 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- 
-      <p>{{monograph.title}}</p>
-      <p>{{monograph.fk_advisor}}</p>
-      <p>{{monograph.fk_co_advisor}}</p>
-      <p>{{monograph.fk_advisor}}</p>
-    -->
+  {% for monograph in monographs %}
+    <p>{{monograph.title}}</p>
+    <p>{{monograph.course}}</p>
+    <p>{{monograph.university}}</p>
+    <p>{{monograph.key_words}}</p>
+    <p>{{monograph.abstract}}</p>
+    <p>{{monograph.fk_id_author}}</p>
+    <p>{{monograph.fk_advisor}}</p>
+    <p>{{monograph.fk_co_advisor}}</p>
+  {% endfor %}
 </body>
 </html>
