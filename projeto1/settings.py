@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'projeto1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'BD_SD',
+        'NAME': 'monographs',
         'USER': 'postgres',
         'PASSWORD': 'devinhos123',
         'HOST': 'localhost',
