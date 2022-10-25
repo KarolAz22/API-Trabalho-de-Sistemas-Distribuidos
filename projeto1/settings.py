@@ -80,8 +80,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'monographs',
         'USER': 'postgres',
-        'PASSWORD': 'devinhos123',
-        'HOST': 'localhost',
+        'PASSWORD': 'devinhos123#',
+        'HOST':'monograph.postgres.database.azure.com',
         'PORT': 5432,
     }
 }
