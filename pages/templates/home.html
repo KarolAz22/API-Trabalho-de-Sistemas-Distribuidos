@@ -28,14 +28,14 @@
 
     {% for monograph in monographs %}
         <a href="{% url 'details' pk=monograph.pk %}">Link </a>
-        <p>{{monograph.title}}</p>
-        <p>{{monograph.course}}</p>
-        <p>{{monograph.university}}</p>
-        <p>{{monograph.key_words}}</p>
-        <p>{{monograph.abstract}}</p>
-        <p>{{monograph.fk_id_author}}</p>
-        <p>{{monograph.fk_advisor}}</p>
-        <p>{{monograph.fk_co_advisor}}</p>
+        <p> <strong> Title: </strong>{{monograph.title}}</p>
+        <p> <strong>Curse: </strong>Monograph{{monograph.course}}</p>
+        <p><strong>University: </strong>{{monograph.university}}</p>
+        <p><strong>Key words: </strong>{{monograph.key_words}}</p>
+        <p> <strong>Abstract: </strong>{{monograph.abstract}}</p>
+        <p> <strong>Author: </strong>{{monograph.fk_id_author}}</p>
+        <p> <strong>Advisor: </strong>{{monograph.fk_advisor}}</p>
+        <p><strong>Co-Advisor: </strong>{{monograph.fk_co_advisor}}</p>
     {% endfor %}
 
     <p>{{message}}</p>
