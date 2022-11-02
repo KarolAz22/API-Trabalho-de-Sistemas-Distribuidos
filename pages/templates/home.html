@@ -1,4 +1,6 @@
+
 {% extends 'base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,66 +8,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    {% block 'head' %}{% endblock %}
+    {% block 'head' %}
+      <link rel="stylesheet" href="{% static '/pages/css/home.css' %}">
+    {% endblock %}
 </head>
 <body>
 {% block 'body' %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
+
+    <div class="container-fluid d-flex flex-wrap justify-content-center mt-5">
+      <form action="{% url 'search' %}" method="POST" >
+          {% csrf_token %}
+          <div class="d-flex">
+              <select class="form-select" name="select" id="select">
+                  <option value="title">Title</option>
+                  <option value="course">Course</option>
+                  <option value="university">University</option>
+                  <option value="abstract">Abstract</option>
+                  <option value="keywords">Key Words</option>
+                  <option value="author">Author</option>
+                  <option value="advisor">Advisor</option>
+                  <option value="coadvisor">Coadvisor</option>
+              </select>
+            <input class="form-control" type="text" class="" name="search"  placeholder="Search" id="input-search">
+            <button class="btn btn-primary" type="submit" id="btn-search"> <img src="{% static '/pages/img/lupa.png' %}" alt="icone-lupa" id="lupa">
+            </button>
+          </div>
+      <div class="result-search mt-5">
+        </form>
+        {% for monograph in monographs %}
+            <a href="{% url 'details' pk=monograph.pk %}">{{monograph.title}}</a>
+        {% endfor %}
+        <p>{{message}}</p>
       </div>
-    </nav>
-
-    <form action="{% url 'search' %}" method="POST" >
-        {% csrf_token %}
-        <div class="">
-            <select name="select" id="select">
-                <option value="title">Title</option>
-                <option value="course">Course</option>
-                <option value="university">University</option>
-                <option value="abstract">Abstract</option>
-                <option value="keywords">Key Words</option>
-                <option value="author">Author</option>
-                <option value="advisor">Advisor</option>
-                <option value="coadvisor">Coadvisor</option>
-            </select>
-          <input type="text" class="" name="search"  placeholder="Search" id="input-pesquisa">
-          <button class="" type="submit" id="botao-pesquisa"> <img src="" alt="icone-lupa" id="lupa">
-          </button>
-        </div>
-
-    </form>
-
-    {% for monograph in monographs %}
-        <a href="{% url 'details' pk=monograph.pk %}">Link </a>
-        <p> <strong> Title: </strong>{{monograph.title}}</p>
-        <p> <strong>Curse: </strong>{{monograph.course}}</p>
-        <p><strong>University: </strong>{{monograph.university}}</p>
-        <p><strong>Key words: </strong>{{monograph.key_words}}</p>
-        <p> <strong>Abstract: </strong>{{monograph.abstract}}</p>
-        <p> <strong>Author: </strong>{{monograph.fk_id_author}}</p>
-        <p> <strong>Advisor: </strong>{{monograph.fk_advisor}}</p>
-        <p><strong>Co-Advisor: </strong>{{monograph.fk_co_advisor}}</p>
-    {% endfor %}
-
-    <p>{{message}}</p>
+    </div>
 {% endblock %}
 
 </body>

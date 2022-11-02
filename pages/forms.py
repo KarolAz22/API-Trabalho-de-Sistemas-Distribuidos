@@ -1,4 +1,4 @@
-from records.models import Author, Co_advirsor, Advirsor, Student, Monograph
+from records.models import Author, Co_advisor, Advisor, Student, Monograph
 from django.forms import ModelForm
 
 
@@ -7,14 +7,14 @@ class AuthorForms(ModelForm):
         model = Author
         fields = "__all__"
 
-class Co_advirsorForms(ModelForm):
+class Co_advisorForms(ModelForm):
     class Meta: 
-        model = Co_advirsor
+        model = Co_advisor
         fields = "__all__"
 
-class Advirsor(ModelForm):
+class AdvisorForms(ModelForm):
     class Meta: 
-        model = Advirsor
+        model = Advisor
         fields = "__all__"
 
 class StudentForms(ModelForm):

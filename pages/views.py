@@ -1,6 +1,6 @@
 from django.http import Http404
 from django.shortcuts import render
-from records.models import Monograph, Author, Advirsor, Co_advirsor
+from records.models import Monograph, Author, Advisor, Co_advisor
 # Create your views here.
 def home(request):
     return render(request, 'home.html')

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from pages.forms import AuthorForms, Co_advirsorForms, MonographForms, StudentForms
+from pages.forms import AuthorForms, AdvisorForms , Co_advisorForms, MonographForms, StudentForms
 
 
 def registerOfAuthors(request):
@@ -17,14 +17,27 @@ def registerOfAuthors(request):
 
 def registerOfCoAdvisor(request):
     if request.method == "POST":
-        form = Co_advirsorForms(request.POST)
+        form = Co_advisorForms(request.POST)
         if form.is_valid():
             post = form.save()
             post.save()
-            form = AuthorForms()
+            form = Co_advisorForms()
             return render(request, 'registerauthors.html', {'form': form})
     else:
-        form = Co_advirsorForms()
+        form = Co_advisorForms()
+            
+    return render(request, 'registercoadvisor.html', {'form': form})
+
+def registerOfAdvisor(request):
+    if request.method == "POST":
+        form = AdvisorForms(request.POST)
+        if form.is_valid():
+            post = form.save()
+            post.save()
+            form = AdvisorForms()
+            return render(request, 'registerauthors.html', {'form': form})
+    else:
+        form = AdvisorForms()
             
     return render(request, 'registercoadvisor.html', {'form': form})
 

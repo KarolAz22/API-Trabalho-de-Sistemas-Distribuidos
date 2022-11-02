@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +9,16 @@
     <title>Register of Author</title>
 </head>
 <body>
-    <form action="">
-        {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
-        <input type="submit" value="Submit">
-    </form>
+    {% block 'body' %}
+        <div class="container mt-5 d-flex justify-content-center">
+            <form class="form-control d-flex flex-column align-items-center" action="">
+                {% csrf_token %}
+                <table>
+                    {{ form.as_table }}
+                </table>
+                <input class="btn btn-primary align-self-center mt-2" type="submit" value="Submit">
+            </form>
+        </div>
+    {% endblock %}
 </body>
 </html>
