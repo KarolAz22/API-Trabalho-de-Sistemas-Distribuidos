@@ -71,7 +71,7 @@ class Advisor(models.Model):
 class Monograph(models.Model):
     id_monography = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
-    date_created = models.DateField(auto_now_add=True)
+    date_created = models.DateField(auto_now_add=False)
     course = models.CharField(max_length=100)
     university = models.CharField(max_length=100)
     key_words = models.CharField(max_length=255)
@@ -79,7 +79,7 @@ class Monograph(models.Model):
     abstract = models.TextField(max_length=2500)
     mography_link = models.URLField()
 
-    fk_id_author = models.ForeignKey(Author, null=True, on_delete=models.SET_NULL, related_name='author')
+    fk_id_author = models.OneToOneField(Author, null=True, on_delete=models.CASCADE, related_name='author')
     fk_co_advisor = models.ForeignKey(Co_advisor, null=True, on_delete=models.SET_NULL, related_name='co_orientador')
     fk_advisor  = models.ForeignKey(Advisor, null=True, on_delete=models.SET_NULL, related_name='orientador')
 
