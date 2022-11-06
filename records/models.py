@@ -81,7 +81,7 @@ class Monograph(models.Model):
 
     fk_id_author = models.OneToOneField(Author, null=True, on_delete=models.CASCADE, related_name='author')
     fk_co_advisor = models.ForeignKey(Co_advisor, null=True, on_delete=models.SET_NULL, related_name='co_orientador')
-    fk_advisor  = models.ForeignKey(Advisor, null=True, on_delete=models.SET_NULL, related_name='orientador')
+    fk_advisor  = models.ForeignKey(Advisor, null=True, on_delete=models.CASCADE, related_name='orientador')
 
     def __str__(self) -> str:
         return self.title
