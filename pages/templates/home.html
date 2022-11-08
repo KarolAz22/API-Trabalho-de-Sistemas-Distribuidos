@@ -36,7 +36,8 @@
       <div class="result-search mt-5">
         </form>
         {% for monograph in monographs %}
-            <a href="{% url 'details' pk=monograph.pk %}">{{monograph.title}}</a>
+            <a  href="{% url 'details' pk=monograph.pk %}">{{monograph.title}}</a>
+            <a class="btn btn-danger" href="{% url 'delete' pk=monograph.pk %}">Apagar</a>
         {% endfor %}
         <p>{{message}}</p>
       </div>

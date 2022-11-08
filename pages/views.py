@@ -27,13 +27,13 @@ def search(request):
             monograph = []
     elif(select == 'advisor'):
         try:
-            advisor = Advirsor.objects.get(name=result)
+            advisor = Advisor.objects.get(name=result)
             monograph = Monograph.objects.filter(fk_advisor = advisor)
         except:
             monograph = []
     elif(select == 'coadvisor'):
         try:
-            coadvisor = Co_advirsor.objects.get(name=result)
+            coadvisor = Co_advisor.objects.get(name=result)
             monograph = Monograph.objects.filter(fk_co_advisor = coadvisor)
         except:
             monograph = []
@@ -44,12 +44,16 @@ def search(request):
         return render(request, 'home.html', {'message': "Nenhum resultado encontrado"})
 
 def details(request, pk):
-    print("Primary Key {}".format(pk))
     try:
         monographs = Monograph.objects.filter(id_monography=pk)
-        print(monographs.values)
     except monographs.DoesNotExist:
         raise Http404("Monograph do not exists")
     
     return render(request, 'monograph.html', {'monographs': monographs})
 
+def delete(request, pk):
+    try: 
+        Monograph.objects.filter(id_monography=pk).delete()
+    except:
+        raise Http404("Unable to delete data")
+    return render(request, 'home.html')

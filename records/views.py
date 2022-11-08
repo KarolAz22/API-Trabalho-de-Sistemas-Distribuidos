@@ -68,6 +68,17 @@ def registerOfmonographs(request):
             
     return render(request, 'registercoadvisor.html', {'form': form})
 
+def allUsers():
+    pass
 
+def deleteAuthor(request,pk):
+    pass
 
+def deleteAdvisor(request,pk):
+    pass
 
+def deleteCoadvisor(request,pk):
+    pass
+
+def deleteStudent(request,pk):
+    pass
