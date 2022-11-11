@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register of Coadvisor</title>
+    <title>Register of Author</title>
 </head>
 <body>
     {% block 'body' %}
         <div class="container mt-5 d-flex justify-content-center">
-            <form class="form-control d-flex flex-column align-items-center" action="{% url 'register-co-advisor' %}" method="POST">
+            <form class="form-control d-flex flex-column align-items-center" action="{% url 'alter-author' pk=author.pk %}" method="POST">
                 {% csrf_token %}
                 <table>
                     {{ form.as_table }}

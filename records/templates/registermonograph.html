@@ -11,7 +11,7 @@
 <body>
     {% block 'body' %}
         <div class="container mt-5 d-flex justify-content-center">
-            <form class="form-control d-flex flex-column align-items-center" action="">
+            <form class="form-control d-flex flex-column align-items-center" action="{% url 'register-monograph' %}" method="POST">
                 {% csrf_token %}
                 <table>
                     {{ form.as_table }}

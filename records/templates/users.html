@@ -10,7 +10,33 @@
 </head>
 <body>
     {% block 'body' %}
-        
+        {% for author in authors %}
+            <p><strong>Author: </strong> {{author.name}}  
+                <a class="btn btn-primary" href="{% url 'alter-author' pk=author.pk %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'delete-author' pk=author.pk %}">Apagar</a>
+            </p>
+        {% endfor %}
+
+        {% for advisor in advisors %}
+            <p><strong>Advisor: </strong> {{advisor.name}}
+                <a class="btn btn-primary" href="{% url 'alter-advisor' pk=advisor.pk %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'delete-advisor' pk=advisor.pk %}">Apagar</a>
+            </p>
+        {% endfor %}
+
+        {% for co_advisor in co_advisors %}
+            <p><strong>Coadvisor: </strong> {{co_advisor.name}}
+                <a class="btn btn-primary" href="{% url 'alter-coadvisor' pk=co_advisor.pk %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'delete-coadvisor' pk=co_advisor.pk %}">Apagar</a>
+            </p>
+        {% endfor %}
+
+        {% for student in students %}
+            <p><strong>Student: </strong> {{student.name}}
+                <a class="btn btn-primary" href="{% url 'alter-student' pk=student.pk %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'delete-student' pk=student.pk %}">Apagar</a>
+            </p>
+        {% endfor %}
     {% endblock %}
 </body>
 </html>

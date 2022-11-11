@@ -21,7 +21,8 @@
         <p> <strong>Abstract</strong> {{monograph.abstract}}</p>
         <p> <strong>Author</strong> {{monograph.fk_id_author}}</p>
         <p> <strong>Advisor</strong> {{monograph.fk_advisor}}</p>
-        <p> <strong>Co-adivisor</strong>{{monograph.fk_co_advisor}}</p>
+        <p> <strong>Co-adivisor</strong> {{monograph.fk_co_advisor}}</p>
+        <a class="btn btn-danger" href="{% url 'delete' pk=monograph.pk %}">Apagar</a>
       {% endfor %}
     </div>
 

@@ -33,15 +33,18 @@
             <button class="btn btn-primary" type="submit" id="btn-search"> <img src="{% static '/pages/img/lupa.png' %}" alt="icone-lupa" id="lupa">
             </button>
           </div>
-      <div class="result-search mt-5">
-        </form>
+      </form>
+    </div>
+
+    <div class="result-search mt-5 d-flex justify-content-center">
+      <div class="monographs d-flex justify-content-start">
         {% for monograph in monographs %}
-            <a  href="{% url 'details' pk=monograph.pk %}">{{monograph.title}}</a>
-            <a class="btn btn-danger" href="{% url 'delete' pk=monograph.pk %}">Apagar</a>
+          <a  href="{% url 'details' pk=monograph.pk %}">{{monograph.title}}</a>
         {% endfor %}
         <p>{{message}}</p>
       </div>
     </div>
+
 {% endblock %}
 
 </body>
