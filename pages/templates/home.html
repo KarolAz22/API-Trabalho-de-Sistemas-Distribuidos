@@ -37,9 +37,11 @@
     </div>
 
     <div class="result-search mt-5 d-flex justify-content-center">
-      <div class="monographs d-flex justify-content-start">
+      <div class="d-flex justify-content-start">
         {% for monograph in monographs %}
+        <p>
           <a  href="{% url 'details' pk=monograph.pk %}">{{monograph.title}}</a>
+        </p>
         {% endfor %}
         <p>{{message}}</p>
       </div>

@@ -1,6 +1,7 @@
 from django.http import Http404
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from records.models import Monograph, Author, Advisor, Co_advisor, Student
+from .forms import MonographForms
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -45,18 +46,30 @@ def search(request):
 
 def details(request, pk):
     try:
-        monographs = Monograph.objects.filter(id_monography=pk)
-    except monographs.DoesNotExist:
+        monography = get_object_or_404(Monograph,id_monography=pk)
+    except monography.DoesNotExist:
         raise Http404("Monograph do not exists")
-    
-    return render(request, 'monograph.html', {'monographs': monographs})
+    return render(request, 'monograph.html', {'monography': monography})
 
 def delete(request, pk):
     try: 
         Monograph.objects.filter(id_monography=pk).delete()
     except:
         raise Http404("Unable to delete data")
-    return render(request, 'home.html')
+    monographs = getAllMonographs()
+    return render(request, 'monographs.html', {'monographs': monographs})
+
+def alterMonograph(request, pk):
+    monography = get_object_or_404(Monograph, id_monography=pk)
+    form = MonographForms(instance=monography)
+    if request.method=="POST":
+        form = MonographForms(request.POST, instance=monography)
+        post = form.save(commit=False)
+        post.save()
+        monographs = getAllMonographs()
+        return render(request, 'monographs.html', context=monographs)
+    elif request.method=="GET":
+        return render(request, 'altermonography.html', {'form': form, 'monography': monography})
 
 def getAllUsers():
     authors = Author.objects.all()

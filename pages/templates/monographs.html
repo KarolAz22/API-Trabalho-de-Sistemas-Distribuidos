@@ -17,9 +17,9 @@
 
 {% block 'body' %}
     <div class="mt-5 d-flex justify-content-center">
-      <div class="d-flex justify-content-start">
-        {% for monograph in monographs %}
-          <a  href="{% url 'details' pk=monograph.pk %}">{{monograph.title}}</a>
+      <div class="">
+        {% for monography in monographs %}
+        <p><a  href="{% url 'details' pk=monography.pk %}">{{monography.title}}</a></p>
         {% endfor %}
       </div>
     </div>

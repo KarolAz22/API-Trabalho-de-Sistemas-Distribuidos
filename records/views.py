@@ -77,7 +77,8 @@ def registerOfmonographs(request):
             post = form.save()
             post.save()
             form = MonographForms()
-            return render(request, 'registermonograph.html', {'form': form})
+            context = getAllMonographs()
+            return render(request, 'monographs.html', context=context)
         else:
             form = MonographForms()
             return render(request, 'registermonograph.html', {'form': form})
@@ -164,4 +165,3 @@ def alterStudent(request, pk):
         return render(request, 'users.html', context=context)
     elif request.method=="GET":
         return render(request, 'alterstudent.html', {'form': form, 'student': student})
-    
