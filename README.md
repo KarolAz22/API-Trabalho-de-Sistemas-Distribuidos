@@ -32,4 +32,11 @@
   E por ultimo abra seu projeto no Visual Studio Code
   
       code .
-   
+  
+  Para fazer as migrações basta rodar o comando
+      
+      python3 manage.py makemigrations
+  
+  Logo depois:
+      
+      python3 manage.py migrate
