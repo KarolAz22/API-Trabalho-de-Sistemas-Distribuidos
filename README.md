@@ -6,6 +6,7 @@
   2. Ter o Python instalado na máquina 
   3. Baixar uma IDE para trabalhar com o Django, sugerimos (Visual Studio Code)
   4. Baixar e configurar o git em seu computador
+  5. Baixar e configurar o postgres em seu linux: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04
   
 ## Clonando o repositório
   Para clonar o repositório utilize o seguinte comando   
