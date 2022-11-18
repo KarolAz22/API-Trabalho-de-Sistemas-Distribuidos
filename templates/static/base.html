@@ -11,20 +11,29 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand mx-3" href="#">Monographs</a>
+      <a class="navbar-brand mx-3" href="{%url 'show-all-monographs'%}">Monographs</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="{%url 'home'%}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="{% url 'register-authors'%}">Register authors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Disabled</a>
+            <a class="nav-link" href="{%url 'register-monograph'%}">Register Monographs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'register-student'%}">Register Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'register-advisor'%}">Register Advisor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'register-co-advisor'%}">Register Co-advisor</a>
           </li>
         </ul>
       </div>
