@@ -80,8 +80,9 @@ def registerOfmonographs(request):
             context = getAllMonographs()
             return render(request, 'monographs.html', context=context)
         else:
+            message = "Author present in another monograph"
             form = MonographForms()
-            return render(request, 'registermonograph.html', {'form': form})
+            return render(request, 'registermonograph.html', {'form': form, 'message': message})
 
 def deleteAuthor(request,pk):
     try:
@@ -89,7 +90,7 @@ def deleteAuthor(request,pk):
     except:
         raise Http404("Unable to delete author")
     context = getAllUsers()
-    return render(request, 'users.html', context=context)     
+    return render(request, 'users.html', context=context)    
 
 def deleteAdvisor(request,pk):
     try:
