@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from projeto1.api import viewsets as recordsviewset
+
+route = routers.DefaultRouter()
+
+route.register(r'register-monograph', recordsviewset.RecordsViewSet, basename ='monograph')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('records/', include('records.urls')),
-    path('', include('pages.urls'))
+    path('', include('pages.urls')),
+    path('api/',include(route.urls))
 ]

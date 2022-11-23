@@ -71,7 +71,7 @@ class Advisor(models.Model):
 class Monograph(models.Model):
     id_monography = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
-    date_created = models.DateField(auto_now_add=False)
+    date_created = models.DateField(auto_now_add=True)
     course = models.CharField(max_length=100)
     university = models.CharField(max_length=100)
     key_words = models.CharField(max_length=255)
