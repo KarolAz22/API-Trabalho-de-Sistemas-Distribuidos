@@ -9,3 +9,11 @@ class MonographViewSet(viewsets.ModelViewSet):
 class AuthorViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.AuthorSerializer
     queryset = models.Author.objects.all()
+
+class CoAdvisorViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.CoAdvisorSerializer
+    queryset = models.Co_advisor.objects.all()
+
+class StudentViewSet(viewsets.ModelViewSet):
+    serializer_class = serializers.StudentSerializer
+    queryset = models.Student.objects.all()

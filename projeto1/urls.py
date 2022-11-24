@@ -22,6 +22,11 @@ route = routers.DefaultRouter()
 
 route.register(r'register-monograph', recordsviewset.MonographViewSet, basename ='monograph')
 route.register(r'register-author', recordsviewset.AuthorViewSet, basename ='author')
+route.register(r'register-advisor', recordsviewset.CoAdvisorViewSet, basename ='advisor')
+route.register(r'register-co-advisor', recordsviewset.CoAdvisorViewSet, basename ='co-advisor')
+route.register(r'register-student', recordsviewset.StudentViewSet, basename ='student')
+
+
 
 
 urlpatterns = [
