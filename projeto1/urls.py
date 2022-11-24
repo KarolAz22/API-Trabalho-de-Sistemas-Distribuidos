@@ -20,7 +20,9 @@ from projeto1.api import viewsets as recordsviewset
 
 route = routers.DefaultRouter()
 
-route.register(r'register-monograph', recordsviewset.RecordsViewSet, basename ='monograph')
+route.register(r'register-monograph', recordsviewset.MonographViewSet, basename ='monograph')
+route.register(r'register-author', recordsviewset.AuthorViewSet, basename ='author')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
