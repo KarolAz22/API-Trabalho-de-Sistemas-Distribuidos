@@ -79,13 +79,24 @@ WSGI_APPLICATION = 'projeto1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'projeto1',
+        'NAME': 'BD_SD',
         'USER': 'postgres',
-        'PASSWORD': 'teste',
+        'PASSWORD': 'devinhos123',
         'HOST':'localhost',
         'PORT': 5432,
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'projeto1',
+#         'USER': 'postgres',
+#         'PASSWORD': 'teste',
+#         'HOST':'localhost',
+#         'PORT': 5432,
+#     }
+# }
 
 
 # Password validation
